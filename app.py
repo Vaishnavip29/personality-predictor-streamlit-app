@@ -32,5 +32,10 @@ scaled_input = scaler.transform(input_data)
 # Predict
 if st.button("Predict Personality"):
     prediction = model.predict(scaled_input)[0]
-    personality = "Introvert" if prediction == 0 else "Extrovert"  # ✅ Correct mapping
+    
+    # Debugging: Show raw prediction
+    st.write("Raw Prediction:", prediction)
+    
+    # Map prediction to personality
+    personality = "Introvert" if prediction == 1 else "Extrovert"
     st.success(f"🎯 Predicted Personality: **{personality}**")
