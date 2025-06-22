@@ -32,5 +32,5 @@ scaled_input = scaler.transform(input_data)
 # Predict
 if st.button("Predict Personality"):
     prediction = model.predict(scaled_input)[0]
-    personality = "Introvert" if prediction == 0 else "Extrovert"  # Reversed mapping
+    personality = "Introvert" if prediction == 1 else "Extrovert"  # Reversed mapping
     st.success(f"🎯 Predicted Personality: **{personality}**")
